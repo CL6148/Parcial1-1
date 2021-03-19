@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,22 +14,39 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 */
 
 // CREA TU FUNCION mayusculas aqui:
-
-
+function mayusculas(arreglo) {
+  for (var i = 0; i < arreglo.length; i++) {
+    var aux = arreglo[i].toUpperCase();
+    console.log(aux);
+  }
+}
 
 /*
 ### F2 Crea una funcion llamada numVocales que reciba como parámetro un arreglo y cuente el numero de vocales de cada elemento y escriba en consola "datos: tiene [x] vocales , para cada elemento del arreglo" 
 */
 
 // CREA TU FUNCION numVocales aqui:
-
+function numVocales(palabra) {
+  var vocales = "aeiouAEIOU";
+  var cantVocales = 0;
+  for (var j = 0; j < palabra.length; j++) {
+    if (vocales.indexOf(palabra[j]) !== -1) {
+      cantVocales++;
+    }
+  }
+  console.log("La palabra " + palabra + " tiene " + cantVocales + " vocales");
+}
 
 /*
 ### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
 */
 
 // CREA TU FUNCION numVocalesArr aqui:
-
+function numVocalesArr(arreglo) {
+  for (var k = 0; k < arreglo.length; k++) {
+    numVocales(arreglo[k]);
+  }
+}
 
 
 
@@ -43,7 +59,6 @@ A) Define un objeto tipo "Perro" que reciba 3 parametros
 1) Nombre
 2) Color
 3) Raza
-
 
 B) Crea 3 objectos  con diferentes valores
 
@@ -64,7 +79,12 @@ Deberia escribir en consola
 
 
 */
-
+function Perro (Nombre,Color,Raza) {
+  this.Nombre = Nombre;
+  this.Color = Color;
+  this.Raza = Raza;
+}
+  
 
 
 /***
@@ -74,13 +94,13 @@ Deberia escribir en consola
  ***/
 
 // F1
-
+mayusculas(nombres);
 
 // F2
-
+numVocales("prueba");
 
 // F3
-
+numVocalesArr(nombres);
 
 
 
@@ -89,6 +109,14 @@ Deberia escribir en consola
  *        PRUEBA TUS OBJETOS
  * 
  ***/
+var perro1 = new Perro("Firulais", "Cafe", "Terrier");
+var perro2 = new Perro("Rocco", "Amarillo", "Golden Retriever");
+var perro3 = new Perro("Max", "Negro", "Chihuahua");
+  
+console.log(perro1.Nombre + " " + perro2.Color + " " + perro3.Raza);
+  
+
+  
 
 
 </script>
